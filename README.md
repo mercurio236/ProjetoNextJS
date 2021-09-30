@@ -23,6 +23,8 @@
 
 
 ### Como visualizar aplicação em sua máquina:
+https://user-images.githubusercontent.com/32252053/135382311-3e1d6386-4b47-49a3-9218-066d5765fb66.mov
+
 
 #### 1º Passo: Instale o git, veja o passo a passo em https://git-scm.com/downloads
 #### 2º Passo: Instale o node, veja o passo a passo em https://nodejs.org/en/download/
