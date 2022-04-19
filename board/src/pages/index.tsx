@@ -35,6 +35,7 @@ export default function Home({ data }: HomeProps) {
             e online
           </p>
         </section>
+        
         {donaters.length !== 0 && <h3>Apoiadores: </h3> }
         <div className={styles.donaters}>
           {

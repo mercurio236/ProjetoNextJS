@@ -5,7 +5,7 @@ import { format } from 'date-fns'
 
 import Head from "next/head";
 import styles from './task.module.scss';
-import {FiCalendar} from 'react-icons/fi'
+import { FiCalendar } from 'react-icons/fi'
 
 type Task = {
     id: string;
@@ -31,7 +31,7 @@ export default function Task({ data }: TaskListProps) {
             <article className={styles.container}>
                 <div className={styles.actions}>
                     <div>
-                        <FiCalendar size={30} color="#FFF"/>
+                        <FiCalendar size={30} color="#FFF" />
                         <span>Tarefa Criada</span>
                         <time>{task.createdFormated}</time>
                     </div>
@@ -70,8 +70,18 @@ export const getServerSideProps: GetServerSideProps = async ({ req, params }) =>
 
             return JSON.stringify(data)
         })
+        .catch(() => {
+            return {};
+        })
 
-
+    if (Object.keys(data).length === 0) {
+        return {
+            redirect: {
+                destination: '/board',
+                permanent: false,
+            }
+        }
+    }
 
     return {
         props: {
